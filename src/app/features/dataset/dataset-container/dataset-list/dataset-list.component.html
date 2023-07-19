@@ -1,0 +1,40 @@
+<div class="container-dataset">
+  <div class="text-align-center">
+    <mat-form-field class="search-bar"
+      ><input
+        type="search"
+        matInput
+        placeholder="Rechercher un jeu de données par client, projet, environnement..."
+        [(ngModel)]="search"
+    /></mat-form-field>
+  </div>
+
+  <div class="container-dataset-list">
+    <mat-list>
+      <mat-list-item
+        *ngFor="let ds of listDataset | filter : search"
+        [routerLink]="[ds.id]"
+      >
+        <mat-icon matListItemIcon>receipt</mat-icon>
+        <h3
+          matListItemTitle
+          [ngStyle]="{ color: 'darkSalmon', 'font-weight': 'bold' }"
+        >
+          {{ ds.libelleDataSet }}
+        </h3>
+        <p matListItemLine>
+          <span>{{ ds.client }}</span>
+          <span> // {{ ds.projet }}</span
+          ><br />
+          <span> {{ ds.environnement }}</span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="text-align-center">
+    <button mat-button color="primary" [routerLink]="'create'">
+      Ajouter une nouvelle Dataset
+    </button>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+</div>

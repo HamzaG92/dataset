@@ -1,0 +1,82 @@
+<form
+  *ngIf="form"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="d-flex flex-column p-top-90 p-left-30"
+>
+  <input type="text" formControlName="id" matInput hidden />
+
+  <mat-form-field>
+    <mat-label>Client</mat-label>
+    <input matInput type="text" formControlName="client" matInput />
+    <div *ngIf="client.errors">
+      <p *ngIf="client.errors['required']">Client obligatoire</p>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Projet</mat-label>
+    <input matInput type="text" formControlName="projet" matInput />
+    <div *ngIf="projet.errors">
+      <p *ngIf="projet.errors['required']">Projet obligatoire</p>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Environnement</mat-label>
+    <input matInput type="text" formControlName="environnement" matInput />
+    <div *ngIf="environnement.errors">
+      <p *ngIf="environnement.errors['required']">Environnement obligatoire</p>
+    </div>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Libelle </mat-label>
+    <input matInput type="text" formControlName="libelleDataSet" matInput />
+    <div *ngIf="libelleDataSet.errors">
+      <p *ngIf="libelleDataSet.errors['required']">Libellé obligatoire</p>
+    </div>
+  </mat-form-field>
+
+  <hr />
+  <button mat-button (click)="addSpeceficite()" type="button">
+    Ajouter une spéceficité
+  </button>
+  <hr />
+  <div formArrayName="listeSpecificites">
+    <div
+      [formGroupName]="index"
+      *ngFor="let spe of listeSpecificites.controls; let index = index"
+    >
+      <div>
+        <input type="text" formControlName="id" matInput hidden />
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Cle</mat-label>
+          <input matInput type="text" formControlName="cle" matInput />
+
+          <!-- <div *ngIf="spe.get('cle').errors">
+            <p *ngIf="spe.get('cle').errors['required']">Cle obligatoire</p>
+          </div> -->
+        </mat-form-field>
+
+        <!-- <label for="">cle</label> <input type="text" formControlName="cle" /> -->
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <input matInput type="text" formControlName="description" matInput />
+          <!-- <div *ngIf="spe.get('description').errors">
+            <p *ngIf="spe.get('description').errors['required']">
+              Description obligatoire
+            </p>
+          </div> -->
+        </mat-form-field>
+        <!-- <label for="">description</label>
+        <input type="text" formControlName="description" /> -->
+      </div>
+    </div>
+  </div>
+  <button mat-button [disabled]="form.invalid" color="primary">Valider</button>
+</form>

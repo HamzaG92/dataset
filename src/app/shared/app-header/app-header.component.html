@@ -1,0 +1,16 @@
+<mat-toolbar class="title-toolbar">
+  <mat-toolbar-row>
+    <span [routerLink]="'/'" [ngStyle]="{ color: 'dimgray' }">Dataset v1</span>
+    <span class="example-spacer"></span>
+    <p [ngStyle]="{ color: 'dimgray' }">Bienvenue {{ identite }}</p>
+
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="logout()"
+    >
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

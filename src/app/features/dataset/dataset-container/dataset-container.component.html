@@ -1,0 +1,7 @@
+<div class="container d-flex flex-row">
+  <div>
+    <app-dataset-list [listDataset]="listDatasets$ | async"></app-dataset-list>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <div class="table-width"><router-outlet></router-outlet></div>
+</div>

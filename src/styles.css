@@ -1,0 +1,91 @@
+.container {
+  max-width: 1500px;
+  display: block;
+  margin: auto;
+  padding: 20px;
+}
+
+.container-progress-bar {
+  padding: 3Opx;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-justify-content-center {
+  justify-content: center;
+}
+
+.flex-justify-content-between {
+  justify-content: space-between;
+}
+
+.flex-align-items-center {
+  align-items: center;
+}
+
+.flex-align-items-between {
+  align-items: space-between;
+}
+.font-title {
+  font-weight: bolder;
+}
+.search-bar {
+  width: 550px;
+}
+.m-auto {
+  margin: auto;
+}
+.container-dataset {
+  width: 700px;
+}
+.container-dataset-list {
+  width: 400px;
+}
+.p-top-130 {
+  padding-top: 130px;
+}
+.p-left-30 {
+  padding-left: 30px;
+}
+.p-10 {
+  padding: 10px;
+}
+.table-width {
+  width: 100%;
+}
+.text-align-center {
+  text-align: center;
+}
+.p-20 {
+  padding: 20px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+.p-top-90 {
+  padding-top: 40px;
+}
+.m-10 {
+  margin: 10px;
+}
+.m-top-40 {
+  margin-top: 50px;
+}
+.m-20 {
+  margin: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
